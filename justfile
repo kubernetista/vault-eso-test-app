@@ -36,3 +36,11 @@ build-start: build start
 # Check the application
 get:
     http :${PORT}
+
+# Docker build
+docker-build:
+    docker build src/ -t $(basename $PWD) -t ghcr.io/kubernetista/$(basename $PWD):latest
+
+# Docker push
+docker-push:
+    docker push ghcr.io/kubernetista/$(basename $PWD):latest
