@@ -8,12 +8,12 @@ content.
 The secrets are supposed to be used to establish a Database connection, but the app
 is only displaying the content, no DB setup is attempted or required.
 
-Originally from:
+**Originally from:**
 
 Github:
 
 - <https://github.com/kostis-codefresh/external-secrets-gitops-example>
 
-Medium Blog post
+Medium Blog post:
 
 - <https://codefresh.io/blog/gitops-secrets-with-argo-cd-hashicorp-vault-and-the-external-secret-operator/>
