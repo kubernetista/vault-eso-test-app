@@ -22,13 +22,13 @@ type mySecrets struct {
 func (secrets *mySecrets) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprintf(w,"<!DOCTYPE html>\n<html>\n<head>\n<title>Vault + ESO test app</title>\n</head>\n")
-	fmt.Fprintf(w,"<body>\n<h1>Test Vault-ESO app.</h1>\n<p>Use this app to verify integration")
-	fmt.Fprintf(w," of ExternalSecrets Operator with Vault (or another) backend.</p>\n")
+	fmt.Fprintf(w,"<body>\n<h1>Vault + ESO test app.</h1>\n<p>Use this app to verify the integration")
+	fmt.Fprintf(w," of External-Secrets-Operator and Vault (or another) backend.</p>\n")
 	fmt.Fprintf(w,"<h2>Status:</h2>")
 
 	fmt.Fprintf(w, "<p>Secrets from: %s</p>", secrets.configLocation)
 
-	fmt.Fprintf(w, "<h2>(fake) DB credentials:</h2>")
+	fmt.Fprintf(w, "<h2>DB credentials (fake):</h2>")
 	fmt.Fprintf(w, "<ul><li>%s</li>", secrets.dbCon)
 	fmt.Fprintf(w, "<li>%s</li>", secrets.dbUser)
 	fmt.Fprintf(w, "<li>%s</li>", secrets.dbPassword)
