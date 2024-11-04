@@ -19,12 +19,13 @@ run:
 # Build the application
 build:
     #!/bin/bash
+    APP_NAME=$(basename $PWD)
     cd ./src/
     # Get the version from git describe
     VERSION=$(git describe --tags --abbrev=4 --always)
     # Build the application with the version information
-    go build -ldflags "-X main.version=${VERSION}" -o $(basename $PWD)
-    echo -e "\nBuilt app $(basename $PWD), version ${VERSION}\n"
+    go build -ldflags "-X main.version=${VERSION}" -o "${APP_NAME}"
+    echo -e "\nBuilt app: ${APP_NAME}, version: ${VERSION}\n"
 
 # Run the application
 start:
